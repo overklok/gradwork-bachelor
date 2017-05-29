@@ -1,0 +1,85 @@
+%%% Преамбула %%%
+
+\documentclass[oneside,final,14pt]{extreport}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmarginsrb{25mm}{20mm}{10mm}{20mm}{0pt}{0mm}{0pt}{13mm}
+\usepackage{indentfirst}
+
+\usepackage{misccorr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\usepackage{tabularx}
+
+\linespread{1.5}
+
+% Оформление заголовков
+\usepackage{titlesec}
+
+\titleformat{\chapter}[block]{\normalfont\Large\bfseries}{\thechapter}{10pt}{}
+\titleformat{\section}[block]{\normalfont\large\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}[block]{\normalfont\bfseries}{\thesubsection}{10pt}{}
+
+\titlespacing*{\chapter}{\parindent}{0pt}{0pt}
+\titlespacing*{\section}{\parindent}{0pt}{0pt}
+\titlespacing*{\subsection}{\parindent}{0pt}{0pt}
+
+\titleformat{\bibliography}[block]{\normalfont\large\bfseries}{\thesection}{10pt}{} % заголовок библиографии
+
+%\renewcommand{\thechapter}{\arabic{chapter}}
+%\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+%\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+
+% Оформление заголовка оглавления
+\usepackage{tocloft}
+
+\renewcommand{\cfttoctitlefont}{\hfil \hbox{} \bfseries \Large} %по центру
+
+\setlength{\cftbeforetoctitleskip}{0pt} %отступ до заголовка
+\setlength{\cftaftertoctitleskip}{0pt} %отступ после заголовка
+
+% Оформление пунктов оглавления
+\renewcommand{\cftchapfont}{\normalfont} % убрать полужирное начертание глав
+\renewcommand{\cftchappagefont}{\normalfont} % убрать полужирное начертание страниц глав
+\setlength{\cftbeforechapskip}{0pt} % убрать вертикальные отступы глав
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % точечные линии для глав
+
+% Отступы элементов списков
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, nolistsep}
+\setlist[enumerate]{noitemsep, nolistsep}
+
+% Нумерация списков
+\renewcommand\labelenumi{\arabic{enumi}}
+\renewcommand\labelenumii{\theenumi.\arabic{enumii}}
+
+% Абзац
+\parindent=1.27cm %абзацный отступ
+
+% Подписи
+
+\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=endash,justification=centering]{caption} %подпись к рисункам
+
+% Изменение автоматических подписей (кроме списка литературы)
+\addto\captionsrussian{
+	\renewcommand{\contentsname}{Содержание}
+	\def\figurename{\normalfont Рисунок}
+}
+
+% Список литературы
+\makeatletter
+	\renewcommand{\@biblabel}[1]{#1.}
+\makeatother
+
+% Гиперссылки
+\usepackage{hyperref}
+
+% Символ №
+\usepackage{textcomp}
+\newcommand*{\No}{\textnumero}
+
+\sloppy

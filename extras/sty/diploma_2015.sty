@@ -1,0 +1,240 @@
+\ProvidesPackage{diploma_2015.sty}
+
+%\renewcommand{\rmdefault}{ftm}
+%\textnumero - значок номера
+
+% спецсимволы
+%\text{\textdegree}
+
+
+%\setlength{\textwidth}{170mm} \setlength{\textheight}{257mm}
+%\setlength{\topmargin}{0mm} \setlength{\headheight}{0mm}
+%\setlength{\headsep}{0mm} \setlength{\footskip}{5mm}
+%\setlength{\oddsidemargin}{0mm} \setlength{\evensidemargin}{0mm}
+
+
+%\renewcommand{\baselinestretch}{1.25}
+
+
+
+\usepackage{textcomp}
+
+%\degree
+\usepackage{gensymb}
+
+\usepackage{csquotes}
+\usepackage{mathtext}
+
+\RequirePackage[cp1251]{inputenc}
+%\RequirePackage[utf8]{inputenc}
+%\RequirePackage[cp866]{inputenc}
+%\RequirePackage[koi8-r]{inputenc}
+%\RequirePackage[T2A]{fontenc}
+\RequirePackage[russian,english]{babel}
+\RequirePackage{epsfig}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsfonts}
+\RequirePackage{theo
+rem}
+\RequirePackage{indentfirst}
+\RequirePackage{float}
+\RequirePackage{cite}
+\RequirePackage{longtable}
+\RequirePackage{moreverb}
+\RequirePackage{verbatim}
+\RequirePackage{array}
+\RequirePackage{dsfont}
+\RequirePackage{citesort}
+\RequirePackage{keyval}
+\RequirePackage{calc}
+\usepackage{tabularx}
+\usepackage{extsizes}
+\usepackage{graphicx}
+\usepackage{chapterbib}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{cmap} % для кодировки шрифтов в pdf
+\usepackage{lastpage}
+\usepackage{paralist} % Compressed lists: compactitem etc.
+
+\usepackage[a4paper]{geometry} % Меняем поля страницы
+\geometry{left=3cm}% левое поле
+\geometry{right=1.5cm}% правое поле
+\geometry{top=2cm}% верхнее поле
+\geometry{bottom=2cm}% нижнее поле
+
+\usepackage{setspace}
+\onehalfspacing
+%\doublespacing
+
+
+
+\usepackage{russmath}
+%\bbin{} \brel{}
+
+% Support for the upright and bold greek letters
+\usepackage{bm}
+\usepackage[Symbolsmallscale]{upgreek}
+\makeatletter
+         \newcommand{\bfgreek}[1]{\bm{\@nameuse{up#1}}}
+\makeatother
+
+
+\makeatletter
+\@addtoreset{equation}{section} % Счетчик формул
+\makeatother
+
+
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{ldash}{~---~}
+\captionsetup{figureposition=bottom,tableposition=top,format=plain,indention=.5cm,font=small,labelfont={rm},labelsep=ldash}
+\DeclareCaptionStyle{figstyle}%
+[justification=centerlast,format=plain,indention=.5cm,font=small,labelfont={rm},labelsep=ldash]%
+{justification=centerlast,format=plain,indention=.5cm,font=small,labelfont={rm},labelsep=ldash}
+\DeclareCaptionStyle{tabstyle}%
+[justification=raggedright,format=plain,indention=.5cm,font=small,labelfont={rm},labelsep=ldash]%
+{justification=justified,format=plain,indention=.5cm,font=small,labelfont={rm},labelsep=ldash}
+\captionsetup[figure]{style=figstyle}
+\captionsetup[table]{style=tabstyle}
+
+
+\usepackage{subcaption}
+\renewcommand{\thesubfigure}{\asbuk{subfigure}}
+
+
+
+\RequirePackage{enumitem}
+\setlist{nolistsep}
+\makeatletter
+     \AddEnumerateCounter{\asbuk}{\@asbuk}{м)}
+\makeatother
+\renewcommand{\labelitemi}{-}
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii})}
+
+
+\setcounter{tocdepth}{3} % задать глубину оглавления — до subsection включительно
+\setcounter{secnumdepth}{3}
+
+\newcommand{\appsection}[1]{\let\oldthesection\thesection
+  \renewcommand{\thesection}{ПРИЛОЖЕНИЕ \oldthesection}
+  \section{}\let\thesection\oldthesection}
+
+\makeatletter
+% запрещаем переносы в названиях секций
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{1}{15pt}%
+                                {-3.5ex plus -1ex minus -.2ex}%
+                                {2.3ex plus .2ex}%
+{\hyphenpenalty=10000\mdseries\normalsize}}
+
+\renewcommand{\subsection}{\@startsection{subsection}{1}{15pt}%
+                                {-3.5ex plus -1ex minus -.2ex}%
+                                {2.3ex plus .2ex}%
+{\hyphenpenalty=10000\mdseries\large}}
+
+\renewcommand{\section}{\@startsection{section}{1}{15pt}%
+                                {-3.5ex plus -1ex minus -.2ex}%
+                                {2.3ex plus .2ex}%
+{\hyphenpenalty=10000\mdseries\Large}}
+
+% меняем заголовок для команды \chapter и запрещаем переносы слов
+%\titleformat{\chapter}{\centering\hyphenpenalty=10000\normalfont\LARGE\uppercase}{\thechapter}{7pt}{\LARGE\uppercase}
+\titleformat{\chapter}{\centering\hyphenpenalty=10000\mdseries\LARGE\uppercase}{\thechapter}{7pt}{\LARGE\uppercase}
+\makeatother
+
+\titlespacing*{\chapter}{0pt}{-30pt}{8pt}
+\titlespacing*{\section}{\parindent}{*4}{*4}
+\titlespacing*{\subsection}{\parindent}{*4}{*4}
+\titlespacing*{\subsubsection}{\parindent}{*4}{*4}
+
+
+
+
+
+\usepackage{totcount}
+\regtotcounter{page}
+\regtotcounter{figure}
+
+\newtotcounter{citnum}
+\def\oldbibitem{} \let\oldbibitem=\bibitem
+\def\bibitem{\stepcounter{citnum}\oldbibitem}
+
+\newtotcounter{longtabcnt}
+\def\oldltab{} \let\oldltab=\longtable
+\def\longtable{\stepcounter{longtabcnt}\oldltab}
+
+\newtotcounter{foofigure}
+\makeatletter
+\renewenvironment{figure}[1][\fps@figure]{
+  \edef\@tempa{\noexpand\@float{figure}[#1]}
+  \@tempa
+  \addtocounter{foofigure}{1}
+}{
+  \end@float
+}
+\makeatother
+
+\newtotcounter{footable}
+\makeatletter
+\renewenvironment{table}[1][\fps@table]{
+  \edef\@tempa{\noexpand\@float{table}[#1]}
+  \@tempa
+  \addtocounter{footable}{1}
+}{
+  \end@float
+}
+\makeatother
+
+\newcounter{fulltabcnt}
+
+
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+
+\addto\captionsrussian{
+\def\figurename{Рисунок}
+\def\figuresname{Рис.}}
+
+
+%\usepackage[unicode,colorlinks]{hyperref}
+
+\allowdisplaybreaks[1]
+\frenchspacing
+
+\usepackage {csquotes}
+\DeclareQuoteStyle{russian}
+    {\guillemotleft}{\guillemotright}[0.025em]
+    {\quotedblbase}{\textquotedblleft}
+\ExecuteQuoteOptions{style=russian}
+
+\newcommand{\enq}[1]{\enquote{#1}}            % укороченный синоним для кавычек
+
+
+
+\newcommand{\Rim}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\?}{\kern.1em}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemm}{Лемма}[section]
+
+\theoremstyle{break}
+\newtheorem{prop}{Предложение}[section]
+
+\theoremstyle{change} \theorembodyfont{\itshape}
+\newtheorem{conseq}{Следствие}[section]
+
+\theoremstyle{change} \theorembodyfont{\itshape}
+\newtheorem{definit}{Определение}[section]
+\theoremstyle{plain} \theorembodyfont{\itshape}
+\newtheorem{exa}{Пример}[section]
+\theoremstyle{plain} \theorembodyfont{\itshape}
+\newtheorem{task}{Задача}[section]
+\theoremstyle{plain} \theorembodyfont{\itshape}
+\newtheorem{note}{Замечание}[section]
