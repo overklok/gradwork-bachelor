@@ -30,17 +30,17 @@
 
 \titleformat{\bibliography}[block]{\normalfont\large\bfseries}{\thesection}{10pt}{} % заголовок библиографии
 
-%\renewcommand{\thechapter}{\arabic{chapter}}
-%\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
-%\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
 
 % Оформление заголовка оглавления
 \usepackage{tocloft}
 
-\renewcommand{\cfttoctitlefont}{\hfil \hbox{} \bfseries \Large} %по центру
+\renewcommand{\cfttoctitlefont}{\hfil \hbox{} \bfseries \Large} % по центру
 
-\setlength{\cftbeforetoctitleskip}{0pt} %отступ до заголовка
-\setlength{\cftaftertoctitleskip}{0pt} %отступ после заголовка
+\setlength{\cftbeforetoctitleskip}{0pt} % отступ до заголовка
+\setlength{\cftaftertoctitleskip}{0pt} % отступ после заголовка
 
 % Оформление пунктов оглавления
 \renewcommand{\cftchapfont}{\normalfont} % убрать полужирное начертание глав
@@ -58,17 +58,23 @@
 \renewcommand\labelenumii{\theenumi.\arabic{enumii}}
 
 % Абзац
-\parindent=1.27cm %абзацный отступ
-
-% Подписи
-
-\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=endash,justification=centering]{caption} %подпись к рисункам
+\parindent=1.27cm % абзацный отступ
 
 % Изменение автоматических подписей (кроме списка литературы)
 \addto\captionsrussian{
 	\renewcommand{\contentsname}{Содержание}
 	\def\figurename{\normalfont Рисунок}
+	\def\tablename{\normalfont Таблица}
 }
+
+% Подписи
+\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=endash]{caption} %подпись к рисункам
+\captionsetup[figure]{justification=centering}
+\captionsetup[table]{justification=raggedleft,singlelinecheck=off}
+
+% Таблицы
+
+\usepackage{tabularx}
 
 % Список литературы
 \makeatletter
@@ -81,5 +87,9 @@
 % Символ №
 \usepackage{textcomp}
 \newcommand*{\No}{\textnumero}
+
+% Прочее оформление
+\usepackage[usenames]{color} % задание цвета текста и фона
+\usepackage{colortbl} % задание цвета таблицы
 
 \sloppy
