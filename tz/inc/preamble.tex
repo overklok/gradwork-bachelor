@@ -22,19 +22,24 @@
 % Оформление заголовков
 \usepackage{titlesec}
 
+\setcounter{secnumdepth}{3}
+
 \titleformat{\chapter}[block]{\normalfont\Large\bfseries}{\thechapter}{10pt}{}
 \titleformat{\section}[block]{\normalfont\large\bfseries}{\thesection}{10pt}{}
 \titleformat{\subsection}[block]{\normalfont\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}[block]{\normalfont\bfseries}{\thesubsubsection}{10pt}{}
 
 \titlespacing*{\chapter}{\parindent}{0pt}{0pt}
 \titlespacing*{\section}{\parindent}{0pt}{0pt}
 \titlespacing*{\subsection}{\parindent}{0pt}{0pt}
+\titlespacing*{\subsubsection}{\parindent}{0pt}{0pt}
 
 \titleformat{\bibliography}[block]{\normalfont\large\bfseries}{\thesection}{10pt}{} % заголовок библиографии
 
 \renewcommand{\thechapter}{\arabic{chapter}}
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
 \renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
 
 % Оформление заголовка оглавления
 \usepackage{tocloft}
