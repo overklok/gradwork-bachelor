@@ -1,0 +1,51 @@
+GET /api/web/buildings?page=1&app_token=NMQXolSTUdCRTdC60GpV2RTNMQXo5S9ZbGUV4OV0 HTTP/1.1
+Host: hlcs:8080
+Content-Type: application/x-www-form-urlencoded
+Cache-Control: no-cache
+
+HTTP/1.1 200 OK
+Connection: Keep-Alive
+Content-Type: application/json; charset=UTF-8
+Date: Sun, 11 Jun 2017 20:10:20 GMT
+Keep-Alive: timeout=5, max=100
+Link: <http://hlcs:8080/api/web/buildings?page=1&app_token=NMQXolSTUdCRTdC60GpV2RTNMQXo5S9ZbGUV4OV0>; rel=self
+Server: Apache
+Transfer-Encoding: chunked
+X-Pagination-Current-Page: 1
+X-Pagination-Page-Count: 1
+X-Pagination-Per-Page: 20
+X-Pagination-Total-Count: 15
+X-Powered-By: PHP/5.6.10
+
+[
+  {
+    "id": 1,
+    "gis_id": "51342964",
+    "address": "{\"house_number\":\"30\",\"pedestrian\":\"улица Вайнера\",\"suburb\":\"Юго-Западный\",
+    	\"city_district\":\"Ленинский район\",\"city\":\"Екатеринбург\",\"county\":\"городской округ Екатеринбург\",
+    	\"state\":\"Свердловская область\",\"postcode\":\"620041\",\"country\":\"РФ\",\"country_code\":\"ru\"}",
+    "display_name": "30, улица Вайнера, Юго-Западный, Ленинский район, Екатеринбург, городской округ Екатеринбург, 
+    	Свердловская область, Уральский федеральный округ, 620041, РФ",
+    "coords": "{\"lat\":\"56.8323468\",\"lon\":\"60.5958021064869\"}",
+    "shape": "[[[60.595619,56.8323957],[60.595674,56.832237],[60.5959947,56.8322703],[60.5959852,56.8322979],[60.5959398,56.832429],
+    	[60.595619,56.8323957]]]",
+    "status": 1,
+    "rate_final": "6.12"
+  },
+  {
+    "id": 2,
+    "gis_id": "52784364",
+    "address": "{\"house_number\":\"15\",\"pedestrian\":\"улица Вайнера\",\"suburb\":\"Юго-Западный\",
+    	\"city_district\":\"Ленинский район\",\"city\":\"Екатеринбург\",\"county\":\"городской округ Екатеринбург\",
+    	\"state\":\"Свердловская область\",\"postcode\":\"620041\",\"country\":\"РФ\",\"country_code\":\"ru\"}",
+    "display_name": "15, улица Вайнера, Юго-Западный, Ленинский район, Екатеринбург, городской округ Екатеринбург, 
+    	Свердловская область, Уральский федеральный округ, 620041, РФ",
+    "coords": "{\"lat\":\"56.83247265\",\"lon\":\"60.5968596382458\"}",
+    "shape": "[[[60.5963924,56.8325413],[60.5964744,56.8322953],[60.5966891,56.8323175],[60.5966767,56.832348],[60.5969849,56.832379],
+    	[60.5969453,56.8324913],[60.5965895,56.832454],[60.5965674,56.8325192],[60.5967353,56.8325362],[60.5967037,56.8326293],
+    	[60.5966226,56.832621],[60.5966084,56.8326628],[60.5964329,56.832645],[60.5964656,56.8325487],[60.5963924,56.8325413]]]",
+    "status": 1,
+    "rate_final": "6.40"
+  },
+  ...
+]

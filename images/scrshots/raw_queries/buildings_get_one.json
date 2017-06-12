@@ -1,0 +1,26 @@
+GET /api/web/buildings/1?&app_token=NMQXolSTUdCRTdC60GpV2RTNMQXo5S9ZbGUV4OV0 HTTP/1.1
+Host: hlcs:8080
+Cache-Control: no-cache
+
+HTTP/1.1 200 OK
+Connection: Keep-Alive
+Content-Length: 976
+Content-Type: application/json; charset=UTF-8
+Date: Sun, 11 Jun 2017 20:30:29 GMT
+Keep-Alive: timeout=5, max=99
+Server: Apache
+X-Powered-By: PHP/5.6.10
+
+{
+  "id": 1,
+  "gis_id": "51342964",
+  "address": "{\"house_number\":\"30\",\"pedestrian\":\"улица Вайнера\",\"suburb\":\"Юго-Западный\",
+  	\"city_district\":\"Ленинский район\",\"city\":\"Екатеринбург\",\"county\":\"городской округ Екатеринбург\",
+  	\"state\":\"Свердловская область\",\"postcode\":\"620041\",\"country\":\"РФ\",\"country_code\":\"ru\"}",
+  "display_name": "30, улица Вайнера, Юго-Западный, Ленинский район, Екатеринбург, городской округ Екатеринбург, 
+  	Свердловская область, Уральский федеральный округ, 620041, РФ",
+  "coords": "{\"lat\":\"56.8323468\",\"lon\":\"60.5958021064869\"}",
+  "shape": "[[[60.595619,56.8323957],[60.595674,56.832237],[60.5959947,56.8322703],[60.5959852,56.8322979],[60.5959398,56.832429],[60.595619,56.8323957]]]",
+  "status": 1,
+  "rate_final": "6.12"
+}

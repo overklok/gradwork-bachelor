@@ -45,10 +45,16 @@
 \setlength{\cftaftertoctitleskip}{0pt} % отступ после заголовка
 
 % Оформление пунктов оглавления
+\usepackage[titletoc]{appendix}
+
+
+
 \renewcommand{\cftchapfont}{\normalfont} % убрать полужирное начертание глав
 \renewcommand{\cftchappagefont}{\normalfont} % убрать полужирное начертание страниц глав
 \setlength{\cftbeforechapskip}{0pt} % убрать вертикальные отступы глав
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % точечные линии для глав
+
+
 
 % Отступы элементов списков
 \usepackage{enumitem}
@@ -96,5 +102,28 @@
 % Прочее оформление
 \usepackage[usenames]{color} % задание цвета текста и фона
 \usepackage{colortbl} % задание цвета таблицы
+
+%%% Убираем точки после цифр в заголовках
+%\def\russian@capsformat{% - это убираем, ибо переопределение не работает
+\AtBeginDocument{% устанавливаем переопределение через это
+  \def\@aftersepkern{\hspace{0.5em}}%
+  \def\postchapter{\@aftersepkern}%
+  \def\postsection{\@aftersepkern}%
+  \def\postsubsection{\@aftersepkern}%
+  \def\postsubsubsection{\@aftersepkern}%
+  \def\postparagraph{\@aftersepkern}%
+  \def\postsubparagraph{\@aftersepkern}%
+}
+
+% \renewcommand\appendixname{Приложение}
+% \makeatletter
+% \def\redeflchapter{\def\l@chapter{\@dottedtocline{1}{1.5em}{7.8em}}}
+% \renewcommand\appendix{\par
+% \setcounter{chapter}{0}%
+% %\setcounter{subsection}{0}%
+% \def\@chapapp{\appendixname}%
+% \addtocontents{toc}{\protect\redeflchapter}
+% \def\thechapter{\appendixname\hspace{0.2cm}\@arabic\c@chapter}}
+% \makeatother
 
 \sloppy
