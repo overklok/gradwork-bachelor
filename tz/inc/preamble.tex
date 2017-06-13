@@ -22,6 +22,8 @@
 % Оформление заголовков
 \usepackage{titlesec}
 
+\usepackage{hyphenat}
+
 \setcounter{secnumdepth}{3}
 
 \titleformat{\chapter}[block]{\normalfont\Large\bfseries}{\thechapter}{10pt}{}
@@ -36,10 +38,10 @@
 
 \titleformat{\bibliography}[block]{\normalfont\large\bfseries}{\thesection}{10pt}{} % заголовок библиографии
 
-\renewcommand{\thechapter}{\arabic{chapter}}
-\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
-\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
-\renewcommand{\thesubsubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\renewcommand{\thechapter}{Б.\arabic{chapter}}
+\renewcommand{\thesection}{\nohyphens{Б.\arabic{chapter}.\arabic{section}}}
+\renewcommand{\thesubsection}{Б.\arabic{chapter}.\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{Б.\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
 
 % Оформление заголовка оглавления
 \usepackage{tocloft}
@@ -61,14 +63,19 @@
 \setlist[enumerate]{noitemsep, nolistsep}
 
 % Нумерация списков
-\renewcommand\labelenumi{\arabic{enumi}}
-\renewcommand\labelenumii{\theenumi.\arabic{enumii}}
+\AddEnumerateCounter{\Asbuk}{\@Asbuk}{\CYRM}
+\AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
+
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii})}
+\renewcommand{\theenumi}{(\asbuk{enumi})}
+\renewcommand{\theenumii}{\arabic{enumii}}
 
 % Маркеры списков
 \renewcommand\labelitemi{---}
 
 % Абзац
-\parindent=1.27cm % абзацный отступ
+\parindent=1.25cm % абзацный отступ
 
 % Изменение автоматических подписей (кроме списка литературы)
 \addto\captionsrussian{
@@ -78,7 +85,7 @@
 }
 
 % Подписи
-\usepackage[margin=10pt,font=normal,labelfont=bf,labelsep=endash]{caption} %подпись к рисункам
+\usepackage[font=normal,labelfont=bf,labelsep=endash]{caption} %подпись к рисункам
 \captionsetup[figure]{justification=centering}
 \captionsetup[table]{justification=raggedright,singlelinecheck=off}
 
@@ -101,5 +108,17 @@
 % Прочее оформление
 \usepackage[usenames]{color} % задание цвета текста и фона
 \usepackage{colortbl} % задание цвета таблицы
+
+%%% Убираем точки после цифр в заголовках
+%\def\russian@capsformat{% - это убираем, ибо переопределение не работает
+\AtBeginDocument{% устанавливаем переопределение через это
+  \def\@aftersepkern{\hspace{0.5em}}%
+  \def\postchapter{\@aftersepkern}%
+  \def\postsection{\@aftersepkern}%
+  \def\postsubsection{\@aftersepkern}%
+  \def\postsubsubsection{\@aftersepkern}%
+  \def\postparagraph{\@aftersepkern}%
+  \def\postsubparagraph{\@aftersepkern}%
+}
 
 \sloppy
