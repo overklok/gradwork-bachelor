@@ -62,14 +62,19 @@
 \setlist[enumerate]{noitemsep, nolistsep}
 
 % Нумерация списков
-\renewcommand\labelenumi{\arabic{enumi}}
-\renewcommand\labelenumii{\theenumi.\arabic{enumii}}
+\AddEnumerateCounter{\Asbuk}{\@Asbuk}{\CYRM}
+\AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
+
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii})}
+\renewcommand{\theenumi}{\asbuk{enumi}.}
+\renewcommand{\theenumii}{\arabic{enumii}}
 
 % Маркеры списков
 \renewcommand\labelitemi{---}
 
 % Абзац
-\parindent=1.27cm % абзацный отступ
+\parindent=1.25cm % абзацный отступ
 
 % Изменение автоматических подписей (кроме списка литературы)
 \addto\captionsrussian{
@@ -79,7 +84,7 @@
 }
 
 % Подписи
-\usepackage[margin=10pt,font=normal,labelfont=bf,labelsep=endash]{caption} %подпись к рисункам
+\usepackage[font=normal,labelfont=bf,labelsep=endash]{caption} %подпись к рисункам
 \captionsetup[figure]{justification=centering}
 \captionsetup[table]{justification=raggedright,singlelinecheck=off}
 
@@ -125,5 +130,8 @@
 % \addtocontents{toc}{\protect\redeflchapter}
 % \def\thechapter{\appendixname\hspace{0.2cm}\@arabic\c@chapter}}
 % \makeatother
+
+\usepackage{lscape} %Поворот страницы в LaTeX
+
 
 \sloppy
