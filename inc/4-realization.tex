@@ -86,46 +86,49 @@
 
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\textwidth]{images/scrshots/main_1}
+		\includegraphics[width=0.9\textwidth]{images/scrshots/main_1}
 		\caption{Главная страница веб-интерфейса САТУ}
 		\label{scrshot:main_1}
 	\end{figure}
 
-	\pagebreak
-
 	При введении пользователем интересующего адреса в поле поиска формируется выпадающий список (рисунок \ref{scrshot:search_field_1}) с доступными в ГИС адресами зданий.
+
+	\pagebreak
 
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.5\textwidth]{images/scrshots/search_field_1}
-		\caption{Процедура поиска здания в ГИС Google Maps}
+		\includegraphics[width=0.4\textwidth]{images/scrshots/search_field_1}
+		\caption{Процедура поиска здания с помощью Google Maps}
 		\label{scrshot:search_field_1}
 	\end{figure}
 
 	После выбора адреса из списка возможно два варианта поведения: если здание найдено в САТУ, оно отобразится в центре карты; в противном случае здание дополнительно выделяется розовым цветом (рисунок \ref{scrshot:main_new_1}).
 
-	\begin{figure}[t!]
+	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\textwidth]{images/scrshots/main_new_1}
+		\includegraphics[width=0.9\textwidth]{images/scrshots/main_new_1}
 		\caption{Отображение здания, не обнаруженного в САТУ}
 		\label{scrshot:main_new_1}
 	\end{figure}
 
+	\pagebreak
 
 	При нажатии левой кнопкой мыши по подсвеченному зданию на карте рядом с ним отображается всплывающее окно с краткой информацией и ссылкой на страницу с подробными сведениями (рисунок 4.12).
 
-	\begin{figure}[t!]
+	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\textwidth]{images/scrshots/main_selected_1}
+		\includegraphics[width=0.9\textwidth]{images/scrshots/main_selected_1}
 		\caption{Взаимодействие с проанализированными зданиями на карте: отображение всплывающих окон}
 		\label{scrshot:main_selected_1}
 	\end{figure}
 
 	В случае, если здание выделено розовым цветом, в панели поиска становится доступна кнопка “Добавить здание”. При нажатии на неё пользователь перейдёт на страницу “Добавить/изменить здание” (рисунок \ref{scrshot:update_1}). Эта страница позволяет просмотреть историю съёмки здания. При необходимости пользователь может добавить новую серию снимков, нажав на кнопку “Добавить серию снимков”.
 
+	\pagebreak
+
 	\begin{figure}[t!]
 		\centering
-		\includegraphics[width=1\textwidth]{images/scrshots/update_1}
+		\includegraphics[width=0.9\textwidth]{images/scrshots/update_1}
 		\caption{Форма добавления/изменения здания}
 		\label{scrshot:update_1}
 	\end{figure}
@@ -133,44 +136,63 @@
 	Загрузка серии снимков через web-приложение в браузере проходит в два этапа: 
 
 	\begin{itemize}
-		\item выбор типа, устройства съёмки, непосредственно загрузка ИК изображений (рисунок \ref{scrshot:add-series_1})
-		\item указание дополнительных данных о загруженных снимках (положение камеры) (рисунок \ref{scrshot:add-series_2})
+		\item выбор типа, устройства съёмки, непосредственно загрузка ИК изображений (рисунок \ref{scrshot:add-series_1});
+		\item указание дополнительных данных о загруженных снимках (положение камеры) (рисунок \ref{scrshot:add-series_2}).
 	\end{itemize}
+ 
+	Форма загрузки изображений использует два способа выбора файлов: перетаскивание в область формы вручную; указание каталога вручную при нажатии на кнопку "Выбрать". После выбора в форме отображаются пиктограммы изображений и указывается их размер. При желании изображения можно удалить из формы.
+
+	\pagebreak
 
 	\begin{figure}[t!]
 		\centering
-		\includegraphics[width=1\textwidth]{images/scrshots/add-series_1}
+		\includegraphics[width=0.9\textwidth]{images/scrshots/add-series_1}
 		\caption{Форма добавления серии снимков (этап 1)}
 		\label{scrshot:add-series_1}
 	\end{figure}
 
-	\begin{figure}[t!]
+	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\textwidth]{images/scrshots/add-series_2}
+		\includegraphics[width=0.9\textwidth]{images/scrshots/add-series_2}
 		\caption{Форма добавления серии снимков (этап 2)}
 		\label{scrshot:add-series_2}
 	\end{figure}
- 
-	Форма загрузки изображений использует два способа выбора файлов: перетаскивание в область формы вручную; указание каталога, содержащего файл с помощью всплывающего при нажатии на кнопку “Выбрать” окна. После выбора в форме отображаются пиктограммы изображений и указывается их размер. При желании изображения можно удалить из формы.
+
+	\pagebreak
 
 	После успешного добавления здания в САТУ на главной странице в разделе “Недавно добавленные” отображаются последние зарегистрированные системой здания. При нажатии на кнопку с адресом здания карта мгновенно переносит обзор на него.
  
 	Некоторые действия, такие как загрузка снимков и добавление зданий, недоступны пользователям, не представившимся в системе. Для этого предусмотрены страницы с формами регистрации и входа в систему (рисунки \ref{scrshot:register_1}, \ref{scrshot:login_1}).
 
-	\begin{figure}[t!]
+	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\textwidth]{images/scrshots/register_1}
-		\caption{Форма добавления серии снимков (этап 1)}
+		\includegraphics[width=0.5\textwidth]{images/scrshots/register_1}
+		\caption{Форма регистрации в системе}
 		\label{scrshot:register_1}
 	\end{figure}
 
-	\begin{figure}[t!]
+	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\textwidth]{images/scrshots/login_1}
-		\caption{Форма добавления серии снимков (этап 2)}
+		\includegraphics[width=0.5\textwidth]{images/scrshots/login_1}
+		\caption{Форма входа в систему}
 		\label{scrshot:login_1}
 	\end{figure}
 
+	\pagebreak
 
 \section{Результаты и выводы}
+
+\par
+
+	По завершении этапа инженерной реализации разрабатываемого программного интерфейса были получены следующие результаты:
+
+	\begin{itemize}
+		\item на основе выдвинутых в главе \ref{chap:design} архитектурных решений реализована база данных с помощью пакета MySQL Workbench и разработан каркас для программного кода API на базе платформы Yii2 Framework;
+		\item выполнена программная реализация функций обработки входящих запросов, произведены их тестирование и отладка;
+		\item приведены примеры основных запросов и возможных ответов реализованного продукта;
+спроектированы экранные формы клиентского web-приложения, работающего по реализованному программному интерфейсу.
+	\end{itemize}
+	
+	\textbf{Выводы}: программный интерфейс, работающий в составе САТУ, способен интегрировать в систему клиентские приложения с помощью Интернет, независимо от операционной системы и программных платформ, на которых они работают эти приложения. Итоговый вариант реализации соответствует требованиям, установленным в Техническом задании на разработку программного интерфейса (приложение \ref{app-tz}).
+
 
